@@ -11,6 +11,7 @@
 		8CFEB30C283BA2AB0095AED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEB30B283BA2AB0095AED2 /* ViewController.swift */; };
 		8CFEB311283BA2AE0095AED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFEB310283BA2AE0095AED2 /* Assets.xcassets */; };
 		8CFEB314283BA2AE0095AED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFEB312283BA2AE0095AED2 /* LaunchScreen.storyboard */; };
+		8CFEB31D283BAD8B0095AED2 /* PasswordTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEB31C283BAD8B0095AED2 /* PasswordTextFiled.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		8CFEB310283BA2AE0095AED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CFEB313283BA2AE0095AED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CFEB315283BA2AE0095AED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CFEB31C283BAD8B0095AED2 /* PasswordTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFiled.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				8CFEB31B283BA4240095AED2 /* Files */,
 				8CFEB307283BA2AB0095AED2 /* AppDelegate.swift */,
+				8CFEB31C283BAD8B0095AED2 /* PasswordTextFiled.swift */,
 				8CFEB30B283BA2AB0095AED2 /* ViewController.swift */,
 			);
 			path = Password;
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFEB30C283BA2AB0095AED2 /* ViewController.swift in Sources */,
+				8CFEB31D283BAD8B0095AED2 /* PasswordTextFiled.swift in Sources */,
 				8CFEB308283BA2AB0095AED2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +299,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +326,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -25,19 +25,23 @@ class ViewController: UIViewController {
 
 extension ViewController {
     func style(){
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.spacing = 20
         
         newPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
     }
     func layout(){
-        stackView.addSubview(newPasswordTextField)
+        
+        stackView.addArrangedSubview(newPasswordTextField)
         view.addSubview(stackView)
+        
+        
         NSLayoutConstraint.activate([
-            newPasswordTextField.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1.0),
-            newPasswordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter:newPasswordTextField.trailingAnchor, multiplier: 1.0)
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1.0),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1.0)
         ])
         
     }

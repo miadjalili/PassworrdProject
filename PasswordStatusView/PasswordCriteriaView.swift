@@ -60,7 +60,6 @@ extension PasswordCriteriaView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8.0
-        stackView.backgroundColor = .systemOrange
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "circle")?.withTintColor(.tertiaryLabel,renderingMode: .alwaysOriginal)

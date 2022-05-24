@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     
     let newPasswordTextField = PasswordTextField(placeHolderText: "New Password")
     let stackView = UIStackView()
-    let criteriaView = PasswordCriteriaView(text: "uppercase letter (A-Z)")
+    let statusView = PasswordStatusView()
+    let confirmPasswordTextField = PasswordTextField(placeHolderText: "Re-enter new password")
+    let restButton = UIButton(type: .system)
     override func viewDidLoad() {
         style()
         layout()
@@ -31,21 +33,30 @@ extension ViewController {
         stackView.spacing = 20
         
         newPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+       
+        statusView.translatesAutoresizingMaskIntoConstraints = false
+        statusView.layer.cornerRadius = 5
+        statusView.clipsToBounds = true
+       
+        confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
         
-        criteriaView.translatesAutoresizingMaskIntoConstraints = false
-        criteriaView.backgroundColor = .systemRed
+        restButton.translatesAutoresizingMaskIntoConstraints = false
+        restButton.configuration = .filled()
+        restButton.setTitle("RestPassword", for: [])
     }
     func layout(){
         
         stackView.addArrangedSubview(newPasswordTextField)
-        stackView.addArrangedSubview(criteriaView)
+        stackView.addArrangedSubview(statusView)
+        stackView.addArrangedSubview(confirmPasswordTextField)
+        stackView.addArrangedSubview(restButton)
         view.addSubview(stackView)
         
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1.0),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2.0),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1.0)
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2.0)
         ])
         
     }

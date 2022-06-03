@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CBB7696284A132E002A1B77 /* PasswordCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBB7695284A132E002A1B77 /* PasswordCriteria.swift */; };
 		8CD8B95E283CB0EF0038C1FA /* PasswordCriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8B95D283CB0EF0038C1FA /* PasswordCriteriaView.swift */; };
 		8CD8B960283D068C0038C1FA /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8B95F283D068C0038C1FA /* PasswordStatusView.swift */; };
 		8CFEB308283BA2AB0095AED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEB307283BA2AB0095AED2 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8CBB7695284A132E002A1B77 /* PasswordCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteria.swift; sourceTree = "<group>"; };
 		8CD8B95D283CB0EF0038C1FA /* PasswordCriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaView.swift; sourceTree = "<group>"; };
 		8CD8B95F283D068C0038C1FA /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		8CFEB304283BA2AB0095AED2 /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,7 @@
 			children = (
 				8CD8B95D283CB0EF0038C1FA /* PasswordCriteriaView.swift */,
 				8CD8B95F283D068C0038C1FA /* PasswordStatusView.swift */,
+				8CBB7695284A132E002A1B77 /* PasswordCriteria.swift */,
 			);
 			path = PasswordStatusView;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFEB30C283BA2AB0095AED2 /* ViewController.swift in Sources */,
+				8CBB7696284A132E002A1B77 /* PasswordCriteria.swift in Sources */,
 				8CFEB31D283BAD8B0095AED2 /* PasswordTextFiled.swift in Sources */,
 				8CD8B95E283CB0EF0038C1FA /* PasswordCriteriaView.swift in Sources */,
 				8CD8B960283D068C0038C1FA /* PasswordStatusView.swift in Sources */,

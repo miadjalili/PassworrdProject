@@ -13,7 +13,7 @@ class  PasswordCriteriaView: UIView{
     let imageView = UIImageView()
     let label = UILabel()
     
-    let checkMarkImage = UIImage(systemName: "checkMark.circle")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+    let checkMarkImage = UIImage(systemName: "checkmark.circle")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
     let xmarkImage = UIImage(systemName: "xmark.circle")?.withTintColor(.systemRed,renderingMode: .alwaysOriginal)
     let circleImage = UIImage(systemName: "circle")?.withTintColor(.tertiaryLabel,renderingMode: .alwaysOriginal)
     
@@ -30,8 +30,6 @@ class  PasswordCriteriaView: UIView{
     func rest(){
         isCriteriaMet = false
         imageView.image = circleImage
-        
-        
     }
     
     init(text: String) {

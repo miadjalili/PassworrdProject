@@ -20,12 +20,36 @@ class ViewController: UIViewController {
     let confirmPasswordTextField = PasswordTextField(placeHolderText: "Re-enter new password")
     let restButton = UIButton(type: .system)
     override func viewDidLoad() {
+        setup()
         style()
         layout()
     }
 }  
 
 extension ViewController {
+    func setup(){
+    //    setupNewPassword()
+        setupDismissKeyboardGesture()
+    }
+    
+//    private func setupNewPassword(){
+//
+//        let newPasswordValidation: CustomValidation = { text in
+//            guard let text = text, !text.isEmpty else {
+//                self.statusView.rest()
+//                return (false,"Enter your password")
+//            }
+//        }
+//    }
+    
+    private func setupDismissKeyboardGesture() {
+        let dismissKeyboardTap = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
+        view.addGestureRecognizer(dismissKeyboardTap)
+    }
+    
+    @objc func viewTapped(_ recognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     func style(){
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,5 +95,13 @@ extension ViewController : PasswordTextFieldDelegate {
         }
     }
     
+    func editingDidEnd(_ sender: PasswordTextField) {
+        if sender == newPasswordTextField{
+            newPasswordTextField.errorLabel.isHidden = false
+        }
+        if sender ==  confirmPasswordTextField {
+            
+        }
+    }
     
 }

@@ -14,6 +14,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    typealias CustomValidation = PasswordTextField.CustomValidation
     let newPasswordTextField = PasswordTextField(placeHolderText: "New Password")
     let stackView = UIStackView()
     let statusView = PasswordStatusView()
@@ -28,19 +29,52 @@ class ViewController: UIViewController {
 
 extension ViewController {
     func setup(){
-    //    setupNewPassword()
+        setupNewPassword()
+        setupConfirmPassword()
         setupDismissKeyboardGesture()
     }
     
-//    private func setupNewPassword(){
-//
-//        let newPasswordValidation: CustomValidation = { text in
-//            guard let text = text, !text.isEmpty else {
-//                self.statusView.rest()
-//                return (false,"Enter your password")
-//            }
-//        }
-//    }
+    private func setupNewPassword(){
+
+        let newPasswordValidation: CustomValidation = { text in
+            guard let text = text, !text.isEmpty else {
+                self.statusView.rest()
+                return (false,"Enter your password")
+            }
+            self.statusView.updateDisplay(text)
+            if !self.statusView.validate(text) {
+                return (false,"Your password must meet the requirements below")
+            }
+            // Valid characters
+            let validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,@:?!()$\\/#"
+            let invalidSet = CharacterSet(charactersIn: validChars).inverted
+            guard text.rangeOfCharacter(from: invalidSet) == nil else {
+                self.statusView.rest()
+                return (false, "Enter valid special chars (.,@:?!()$\\/#) with no spaces")
+            }
+            return(true,"")
+        }
+        newPasswordTextField.customValidation = newPasswordValidation
+        confirmPasswordTextField.delegate = self
+    }
+    
+    private func setupConfirmPassword() {
+        let confirmPasswordValidation: CustomValidation = { text in
+            guard let text = text, !text.isEmpty else {
+                return (false, "Enter your password.")
+            }
+            
+            guard text == self.newPasswordTextField.text else {
+                return (false, "Passwords do not match.")
+            }
+            
+            return (true, "")
+        }
+        confirmPasswordTextField.customValidation = confirmPasswordValidation
+           confirmPasswordTextField.delegate = self
+    }
+
+   
     
     private func setupDismissKeyboardGesture() {
         let dismissKeyboardTap = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
@@ -97,10 +131,11 @@ extension ViewController : PasswordTextFieldDelegate {
     
     func editingDidEnd(_ sender: PasswordTextField) {
         if sender == newPasswordTextField{
-            newPasswordTextField.errorLabel.isHidden = false
+            statusView.shouldRestCriteria = false // add
+            _ = newPasswordTextField.validate()
         }
         if sender ==  confirmPasswordTextField {
-            
+            _ = confirmPasswordTextField.validate()
         }
     }
     
